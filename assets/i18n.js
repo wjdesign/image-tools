@@ -15,7 +15,7 @@
       "nav.converter": "轉換工具",
       "nav.privacy": "隱私權政策",
       "nav.terms": "使用條款",
-      "nav.blog": "部落格",
+      "nav.blog": "Wayne's blog",
 
       "title.converter": "WebP 轉換器｜WebP 轉 JPG、PNG 免費線上工具（100% 本地處理）",
       "title.privacy": "隱私權政策 — WebP 圖片轉換器",
@@ -115,7 +115,7 @@
       "nav.converter": "转换工具",
       "nav.privacy": "隐私政策",
       "nav.terms": "使用条款",
-      "nav.blog": "博客",
+      "nav.blog": "Wayne's blog",
 
       "title.converter": "WebP 转换器｜WebP 转 JPG、PNG 免费在线工具（100% 本地处理）",
       "title.privacy": "隐私政策 — WebP 图片转换器",
@@ -215,7 +215,7 @@
       "nav.converter": "Converter",
       "nav.privacy": "Privacy Policy",
       "nav.terms": "Terms of Service",
-      "nav.blog": "Blog",
+      "nav.blog": "Wayne's blog",
 
       "title.converter": "WebP Converter — Convert WebP to JPG/PNG Online Free (100% Local)",
       "title.privacy": "Privacy Policy — WebP Image Converter",
@@ -315,7 +315,7 @@
       "nav.converter": "変換ツール",
       "nav.privacy": "プライバシーポリシー",
       "nav.terms": "利用規約",
-      "nav.blog": "ブログ",
+      "nav.blog": "Wayne's blog",
 
       "title.converter": "WebP 変換ツール｜WebP を JPG・PNG に無料変換（100% ローカル処理）",
       "title.privacy": "プライバシーポリシー — WebP 画像変換ツール",
