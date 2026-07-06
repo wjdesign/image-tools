@@ -172,7 +172,7 @@
       renderItem(item);
     }
     if (skipped) alert(t("msg.skipped", { n: skipped, fmt: state.input.toUpperCase() }));
-    if (!showAll) page = Math.max(1, Math.ceil(items.length / PAGE_SIZE)); // 跳到最新加入的那一頁
+    if (!showAll) page = 1; // 加入圖片後回到第一頁
     renderList();
     refreshButtons();
   }
