@@ -105,6 +105,10 @@ h1 { font-size: 28px; margin: 0 0 8px; }
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   gap: 12px; min-width: 190px; padding: 0 6px;
 }
+@media (min-width: 561px) {
+  /* 桌面版：轉換 icon + 品質選單靠下，與兩側卡片底部切齊 */
+  .arrow-mid { justify-content: flex-end; }
+}
 .arrow-mid > img { width: 40px; height: 40px; }
 
 /* 品質選單（置於轉換 icon 下方） */
@@ -132,10 +136,11 @@ h1 { font-size: 28px; margin: 0 0 8px; }
   background: rgba(56,189,248,.12);
 }
 .fmt-current::after {
-  content: "▾"; position: absolute; right: 10px; bottom: 8px;
-  font-size: 13px; color: var(--muted);
+  content: ""; position: absolute; right: 10px; bottom: 10px;
+  width: 12px; height: 8px; opacity: .7;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2338bdf8' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center / contain;
 }
-.fmt-current:hover::after { color: var(--accent); }
+.fmt-current:hover::after { opacity: 1; }
 
 /* ---- format modal ---- */
 .modal-backdrop {

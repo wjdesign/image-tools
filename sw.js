@@ -1,5 +1,5 @@
 /* Service Worker — 快取所有靜態資源，讓工具完全離線可用 */
-const CACHE = "webp-tools-v31";
+const CACHE = "webp-tools-v32";
 
 const ASSETS = [
   "./",
