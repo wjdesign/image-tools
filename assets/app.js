@@ -17,6 +17,7 @@
     qualityCtrl: document.getElementById("qualityCtrl"),
     list: document.getElementById("list"),
     pager: document.getElementById("pager"),
+    explain: document.querySelector(".explain"),
     convertAll: document.getElementById("convertAll"),
     downloadAll: document.getElementById("downloadAll"),
     downloadAllGz: document.getElementById("downloadAllGz"),
@@ -197,6 +198,7 @@
 
   // ---- 清單分頁 ----
   function renderList() {
+    els.explain.hidden = items.length > 0; // 清單有圖時收起說明區塊
     const pages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
     if (page > pages) page = pages;
     els.list.innerHTML = "";

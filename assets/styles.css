@@ -240,6 +240,7 @@ body.drag-active .drop-overlay { display: flex; }
   border: 1px solid var(--border); border-radius: var(--radius);
   padding: 28px 24px;
 }
+.explain[hidden] { display: none; }
 .explain-title { font-size: 20px; text-align: center; margin: 0 0 22px; }
 .flow { display: flex; align-items: stretch; gap: 10px; justify-content: center; }
 .flow-step {
