@@ -11,6 +11,21 @@
   --radius: 12px;
 }
 * { box-sizing: border-box; }
+
+/* ---- scrollbar（深色主題） ---- */
+::-webkit-scrollbar { width: 12px; height: 12px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--panel-2);
+  border-radius: 999px;
+  border: 3px solid var(--bg); /* 留出軌道邊距，做出懸浮膠囊感 */
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+::-webkit-scrollbar-corner { background: var(--bg); }
+/* Firefox（不支援 -webkit 偽元素時的替代方案） */
+@supports (not selector(::-webkit-scrollbar)) {
+  html { scrollbar-width: thin; scrollbar-color: var(--panel-2) var(--bg); }
+}
 body {
   margin: 0;
   font-family: "Segoe UI", "Microsoft JhengHei", "Hiragino Sans", system-ui, sans-serif;
