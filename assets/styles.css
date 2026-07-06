@@ -223,8 +223,12 @@ body.drag-active .drop-overlay { display: flex; }
 
 /* ---- 清單分頁 ---- */
 .pager { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; margin-top: 16px; }
-.pager-info { color: var(--muted); font-size: 13px; margin-right: 6px; }
+.pager-info { color: var(--muted); font-size: 13px; margin-right: 6px; white-space: nowrap; }
 .page-gap { color: var(--muted); font-size: 13px; padding: 0 2px; user-select: none; }
+@media (max-width: 560px) {
+  .pager-info { flex-basis: 100%; text-align: center; margin: 0 0 4px; } /* 窄螢幕時獨佔一行，頁碼才不會跑版 */
+  .page-btn { min-width: 34px; padding: 7px 10px; }
+}
 .page-btn {
   min-width: 36px; padding: 7px 12px; border-radius: 8px;
   background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
