@@ -209,6 +209,12 @@ body.drag-active .drop-overlay { display: flex; }
 
 .actions { display: flex; gap: 12px; margin: 20px 0; flex-wrap: wrap; }
 .actions #convertAll { flex: 1; }
+@media (max-width: 560px) {
+  /* 手機版改用 grid，避免按鈕換行後寬度參差 */
+  .actions { display: grid; grid-template-columns: 1fr 1fr; }
+  .actions #convertAll { grid-column: 1 / -1; }
+  .actions #clear { grid-column: 1 / -1; }
+}
 .btn {
   border: none; border-radius: 8px; padding: 10px 18px; font-size: 14px;
   font-weight: 600; cursor: pointer; transition: filter .15s;
