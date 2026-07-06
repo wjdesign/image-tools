@@ -207,17 +207,41 @@
     renderPager(pages);
   }
 
+  // 頁碼收合：只顯示首頁、末頁、當前頁 ±1，其餘以「…」代替
+  function pageWindow(total, cur) {
+    const out = [];
+    for (let p = 1; p <= total; p++) {
+      if (p === 1 || p === total || Math.abs(p - cur) <= 1) out.push(p);
+      else if (out[out.length - 1] !== "…") out.push("…");
+    }
+    return out;
+  }
+
   function renderPager(pages) {
     els.pager.innerHTML = "";
     if (items.length <= PAGE_SIZE) return; // 一頁裝得下就不顯示分頁列
-    for (let p = 1; p <= pages; p++) {
-      const b = document.createElement("button");
-      b.type = "button";
-      b.className = "page-btn" + (!showAll && p === page ? " active" : "");
-      b.textContent = p;
-      b.addEventListener("click", () => { showAll = false; page = p; renderList(); });
-      els.pager.appendChild(b);
+
+    const info = document.createElement("span");
+    info.className = "pager-info";
+    info.textContent = t("pager.info", { n: items.length, p: pages });
+    els.pager.appendChild(info);
+
+    for (const p of pageWindow(pages, page)) {
+      if (p === "…") {
+        const gap = document.createElement("span");
+        gap.className = "page-gap";
+        gap.textContent = "…";
+        els.pager.appendChild(gap);
+      } else {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "page-btn" + (!showAll && p === page ? " active" : "");
+        b.textContent = p;
+        b.addEventListener("click", () => { showAll = false; page = p; renderList(); });
+        els.pager.appendChild(b);
+      }
     }
+
     const all = document.createElement("button");
     all.type = "button";
     all.className = "page-btn page-all" + (showAll ? " active" : "");

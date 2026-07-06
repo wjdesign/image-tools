@@ -222,7 +222,9 @@ body.drag-active .drop-overlay { display: flex; }
 .remove:hover { color: #f87171; }
 
 /* ---- 清單分頁 ---- */
-.pager { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 16px; }
+.pager { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; margin-top: 16px; }
+.pager-info { color: var(--muted); font-size: 13px; margin-right: 6px; }
+.page-gap { color: var(--muted); font-size: 13px; padding: 0 2px; user-select: none; }
 .page-btn {
   min-width: 36px; padding: 7px 12px; border-radius: 8px;
   background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
