@@ -207,11 +207,11 @@
     renderPager(pages);
   }
 
-  // 頁碼收合：只顯示首頁、末頁、當前頁 ±1，其餘以「…」代替
+  // 頁碼收合：只顯示首頁、末頁、當前頁 ±2，其餘以「…」代替
   function pageWindow(total, cur) {
     const out = [];
     for (let p = 1; p <= total; p++) {
-      if (p === 1 || p === total || Math.abs(p - cur) <= 1) out.push(p);
+      if (p === 1 || p === total || Math.abs(p - cur) <= 2) out.push(p);
       else if (out[out.length - 1] !== "…") out.push("…");
     }
     return out;
