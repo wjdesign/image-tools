@@ -1,0 +1,15 @@
+{
+  "name": "WebP Image Converter",
+  "short_name": "WebP Tools",
+  "description": "Convert images between WebP, JPG and PNG entirely in your browser. 100% local, works offline.",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    { "src": "assets/img/favicon-96.png", "sizes": "96x96", "type": "image/png" },
+    { "src": "assets/img/pwa-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/img/pwa-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

@@ -1,0 +1,179 @@
+<html lang="zh-Hant">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebP 轉換器｜WebP 轉 JPG、PNG 免費線上工具（100% 本地處理）</title>
+<meta name="description" content="免費線上 WebP 轉換器：WebP 轉 JPG、WebP 轉 PNG、JPG/PNG 轉 WebP。100% 瀏覽器本地處理、圖片不上傳、支援批次轉換與品質調整，可安裝為 App 離線使用。">
+<meta name="keywords" content="WebP, WebP 轉 JPG, WebP 轉 PNG, JPG 轉 WebP, PNG 轉 WebP, WebP converter, 圖片轉換, 線上轉檔, 圖片壓縮">
+<meta name="author" content="Wayne">
+<link rel="author" href="https://wayne-blog.com">
+<link rel="canonical" href="https://wjdesign.github.io/image-tools/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WebP 圖片轉換器">
+<meta property="og:title" content="WebP 轉換器｜WebP ⇄ JPG/PNG 免費線上工具">
+<meta property="og:description" content="100% 本地處理的免費圖片轉換器：WebP、JPG、PNG 互轉,圖片不上傳、支援批次與離線使用。">
+<meta property="og:url" content="https://wjdesign.github.io/image-tools/">
+<meta property="og:image" content="https://wjdesign.github.io/image-tools/assets/img/pwa-512.png">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="WebP 轉換器｜WebP ⇄ JPG/PNG 免費線上工具">
+<meta name="twitter:description" content="100% 本地處理,圖片不上傳。WebP、JPG、PNG 互轉,支援批次與離線使用。">
+<meta name="twitter:image" content="https://wjdesign.github.io/image-tools/assets/img/pwa-512.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "WebP 圖片轉換器",
+  "alternateName": "WebP Image Converter",
+  "url": "https://wjdesign.github.io/image-tools/",
+  "description": "免費線上 WebP 轉換器,WebP、JPG、PNG 互轉。100% 瀏覽器本地處理,圖片不上傳,支援批次轉換、品質調整與離線使用。",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "TWD" },
+  "author": { "@type": "Person", "name": "Wayne", "url": "https://wayne-blog.com" },
+  "inLanguage": ["zh-Hant", "zh-Hans", "en", "ja"],
+  "featureList": "WebP to JPG, WebP to PNG, JPG to WebP, PNG to WebP, batch conversion, quality control, offline PWA"
+}
+</script>
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" sizes="96x96" href="assets/img/favicon-96.png">
+<link rel="stylesheet" href="assets/styles.css">
+<body data-title-key="title.converter">
+
+<nav class="topnav">
+  <a class="brand" href="index.html"><img class="brand-logo" src="assets/img/logo.png" alt=""> <span data-i18n="site.name">WebP 圖片轉換器</span></a>
+  <div class="navlinks">
+    <a href="index.html" class="current" data-i18n="nav.converter">轉換工具</a>
+    <a href="privacy.html" data-i18n="nav.privacy">隱私權政策</a>
+    <a href="terms.html" data-i18n="nav.terms">使用條款</a>
+    <span id="langSwitch" class="lang-switch"></span>
+  </div>
+</nav>
+
+<div class="wrap">
+  <header class="hero">
+    <h1><img class="hero-logo" src="assets/img/logo.png" alt=""> <span data-i18n="site.name">WebP 圖片轉換器</span></h1>
+    <span class="badge" data-i18n="app.badge">● 100% 本地處理，圖片不會上傳</span>
+    <p class="sub" data-i18n="app.subtitle">所有運算都在你的瀏覽器完成。</p>
+  </header>
+
+  <div class="format-picker">
+    <div class="col">
+      <div class="col-label"><img class="col-ic" src="assets/img/icon_in.png" alt=""><span data-i18n="picker.input">輸入格式</span></div>
+      <button class="fmt-card fmt-current" id="inputCurrent"></button>
+    </div>
+    <div class="arrow-mid">
+      <img src="assets/img/icon_transform.png" alt="">
+      <div class="quality-mini" id="qualityCtrl">
+        <select id="quality" aria-label="Quality">
+          <option value="100" data-i18n="quality.q100">100% - 原始品質</option>
+          <option value="80" selected data-i18n="quality.q80">80% - 優質壓縮</option>
+          <option value="60" data-i18n="quality.q60">60% - 些微壓縮</option>
+          <option value="40" data-i18n="quality.q40">40% - 高效壓縮</option>
+          <option value="20" data-i18n="quality.q20">20% - 極大壓縮</option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <div class="col-label"><img class="col-ic" src="assets/img/icon_out.png" alt=""><span data-i18n="picker.output">輸出格式</span></div>
+      <button class="fmt-card fmt-current" id="outputCurrent"></button>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="fmtModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="fmtModalTitle">
+      <div class="modal-title" id="fmtModalTitle"></div>
+      <div class="cards" id="fmtModalCards"></div>
+    </div>
+  </div>
+
+  <div class="drop" id="drop">
+    <div class="icon"><img src="assets/img/icon_load.png" alt=""></div>
+    <p data-i18n="drop.title">拖放圖片到這裡，或點擊選擇檔案</p>
+    <small data-i18n="drop.hint">支援 JPG、PNG、WebP 等，可一次多張</small>
+    <input type="file" id="file" accept="image/*" multiple hidden>
+  </div>
+
+  <div class="actions">
+    <button class="btn btn-primary" id="convertAll" disabled><img class="btn-ic" src="assets/img/icon_submit.png" alt=""><span data-i18n="btn.convertAll">開始轉換</span></button>
+    <button class="btn btn-ghost" id="downloadAll" disabled><img class="btn-ic" src="assets/img/icon_zip.png" alt=""><span data-i18n="btn.downloadZip">下載全部 (ZIP)</span></button>
+    <button class="btn btn-ghost" id="downloadAllGz" disabled><img class="btn-ic" src="assets/img/icon_rar.png" alt=""><span data-i18n="btn.downloadTarGz">下載全部 (TAR.GZ)</span></button>
+    <button class="btn btn-ghost" id="clear" disabled><img class="btn-ic" src="assets/img/icon_delete.png" alt=""><span data-i18n="btn.clear">重設</span></button>
+  </div>
+
+  <div class="list" id="list"></div>
+  <div class="pager" id="pager"></div>
+
+  <section class="explain">
+    <h2 class="explain-title" data-i18n="explain.title">壓縮原理說明</h2>
+    <div class="flow">
+      <div class="flow-step">
+        <span class="flow-num">1</span>
+        <b data-i18n="explain.step1">原始圖檔</b>
+        <small data-i18n="explain.step1d">PNG / JPG / WebP</small>
+      </div>
+      <div class="flow-arrow">➜</div>
+      <div class="flow-step">
+        <span class="flow-num">2</span>
+        <b data-i18n="explain.step2">解碼為像素</b>
+        <small data-i18n="explain.step2d">還原成未壓縮的點陣資料</small>
+      </div>
+      <div class="flow-arrow">➜</div>
+      <div class="flow-step">
+        <span class="flow-num">3</span>
+        <b data-i18n="explain.step3">重新編碼</b>
+        <small data-i18n="explain.step3d">以所選格式與品質重新壓縮</small>
+      </div>
+      <div class="flow-arrow">➜</div>
+      <div class="flow-step">
+        <span class="flow-num">4</span>
+        <b data-i18n="explain.step4">輸出新檔案</b>
+        <small data-i18n="explain.step4d">檔名不變，僅更換副檔名</small>
+      </div>
+    </div>
+
+    <h3 class="explain-why" data-i18n="explain.whyTitle">為什麼檔案有時反而變大？</h3>
+    <div class="reasons">
+      <div class="reason">
+        <b data-i18n="explain.r1t">品質 100% 是無損模式</b>
+        <p data-i18n="explain.r1">瀏覽器在品質 100% 時會改用無損編碼，檔案通常明顯較大。想縮小檔案，建議選 80%。</p>
+      </div>
+      <div class="reason">
+        <b data-i18n="explain.r2t">原檔已經被最佳化</b>
+        <p data-i18n="explain.r2">許多 PNG 已使用調色盤或壓縮工具（如 TinyPNG）優化，重新編碼會失去這些優勢。</p>
+      </div>
+      <div class="reason">
+        <b data-i18n="explain.r3t">小圖的固定開銷</b>
+        <p data-i18n="explain.r3">極小的圖檔中，格式本身的固定資料佔比很高，轉換後容易不減反增。</p>
+      </div>
+    </div>
+
+    <p class="explain-tip" data-i18n="explain.tip">💡 想要最划算的壓縮，選擇 80% 品質；若轉換後變大，清單會以紅色「↑」提醒你。</p>
+  </section>
+
+  <div class="page-foot">
+    <span data-i18n="foot.tech">純前端工具・使用瀏覽器 Canvas API・可完全離線運行</span><br>
+    <a href="https://developer.mozilla.org/docs/Web/API/HTMLCanvasElement/toBlob" target="_blank" rel="noopener" data-i18n="foot.techLink">技術原理：canvas.toBlob()</a>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div><span data-i18n="foot.copyright">本工具在你的裝置本地執行，不會上傳任何圖片。</span></div>
+  <div class="foot-links">
+    <a href="privacy.html" data-i18n="nav.privacy">隱私權政策</a> ·
+    <a href="terms.html" data-i18n="nav.terms">使用條款</a>
+  </div>
+  <div class="copyright">© 2026 <a href="https://wayne-blog.com" target="_blank" rel="noopener author">Wayne</a>. All rights reserved.</div>
+</footer>
+
+<div class="drop-overlay"><div class="box" data-i18n="drop.overlay">放開滑鼠，加入圖片</div></div>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
